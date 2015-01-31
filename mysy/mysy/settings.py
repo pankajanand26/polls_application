@@ -26,6 +26,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ON_OPENSHIFT = False 
+
+if os.environ.has_key('OPENSHIFT_REPO_DIR'):     
+    ON_OPENSHIFT = True
+
 
 # Application definition
 
@@ -57,14 +62,23 @@ WSGI_APPLICATION = 'mysy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysy',
-        'USER': 'root',
-	'HOST': '0.0.0.0',
+
+if ON_OPENSHIFT:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         }
     }
-}
+else: 
+    DATABASES = {
+    	'default': {
+        	'ENGINE': 'django.db.backends.mysql',
+        	'NAME': 'mysy',
+        	'USER': 'root',
+		'HOST': '0.0.0.0',
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
