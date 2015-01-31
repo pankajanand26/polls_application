@@ -1,7 +1,7 @@
 #!/usr/bin/python 
 import os, sys  
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysy.mysy.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysy.settings'
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'],'mysy'))
 
 virtenv = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'],'virtenv') 
