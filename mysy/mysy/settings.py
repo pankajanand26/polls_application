@@ -21,7 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '1#e7y%z@c&ii4_n1w47^2f@a526n3y3e@_8i_p25&mdm4xe5-w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
+
+#DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -33,6 +36,13 @@ if os.environ.has_key('OPENSHIFT_REPO_DIR'):
     ON_OPENSHIFT = True
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
+
+if ON_OPENSHIFT:
+    DEBUG=False
+else:
+    DEBUG=True
+
+
 
 # Application definition
 
