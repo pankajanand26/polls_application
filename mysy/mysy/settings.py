@@ -64,11 +64,15 @@ WSGI_APPLICATION = 'mysy.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 
-if ON_OPENSHIFT:
+if ON_OPENSHIFT:i
+    url = urlparse.urlparse(os.environ.get('OPENSHIFT_MYSQL_DB_URL'))
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'mysy'),
+            'USER': url.username,
+            'HOST': url.hostname,
+            'PORT': url.port,
          }
     }
 else: 
