@@ -69,7 +69,7 @@ if ON_OPENSHIFT:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['OPENSHIFT_APP_NAME']),
+            'NAME': os.environ['OPENSHIFT_APP_NAME'],
             'USER': url.username,
             'PASSWORD': url.password,
             'HOST': url.hostname,
