@@ -1,3 +1,7 @@
-from django.contrib import admin 
+from django.conf.urls import patterns, url
 
-admin.autodiscover()  
+from polls import views
+
+urlpatterns = patterns('',
+    url(r'^$', views.index, name='index'),
+)
