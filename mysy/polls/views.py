@@ -5,6 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 from polls.models import Question
 from django.template import RequestContext, loader
+from django.core.mail import send_mail
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -14,6 +15,7 @@ def index(request):
     context = RequestContext(request, {
         'latest_question_list': latest_question_list,
     })
+    send_mail('Subject here', 'Here is the message.', 'pankaj_anand_26@yahoo.co.in',     ['pankaj.anand.26@gmail.com'], fail_silently=False)
     return HttpResponse(template.render(context))
 
 def detail(request, question_id):
