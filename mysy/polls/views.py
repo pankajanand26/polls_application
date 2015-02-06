@@ -15,7 +15,7 @@ def index(request):
     context = RequestContext(request, {
         'latest_question_list': latest_question_list,
     })
-    send_mail('Subject here', 'Here is the message.', 'pankaj.anand.26@gmail.com',     ['pankaj.anand.26@gmail.com','pankaj_anand_26@yahoo.co.in'], fail_silently=False)
+    send_mail('iSmile Please', 'Here is the message.', 'pankaj.anand.26@gmail.com',     ['pankaj.anand.26@gmail.com','pankaj_anand_26@yahoo.co.in'], fail_silently=False)
     return HttpResponse(template.render(context))
 
 def detail(request, question_id):
