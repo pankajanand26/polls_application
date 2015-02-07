@@ -123,6 +123,11 @@ STATIC_ROOT=os.path.join(BASE_DIR,  'static')
 
 STATIC_URL ='/static/'
 
+if ON_OPENSHIFT:   
+    STATICFILES_DIRS = [ 
+        "/var/lib/openshift/54cbca4d4382ecb84e000042/app-root/runtime/repo/mysy/static", 
+    ]
+
 #ADMIN_MEDIA_PREFIX = '/mysy/static/admin/'
 
 STATICFILES_FINDERS = (
