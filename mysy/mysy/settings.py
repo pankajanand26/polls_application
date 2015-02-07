@@ -121,6 +121,8 @@ USE_TZ = True
 
 #STATIC_ROOT=os.path.join(BASE_DIR,  'static')
 
+STATIC_ROOT=''
+
 STATIC_URL ='/static/'
 
 #if ON_OPENSHIFT:   
@@ -128,7 +130,7 @@ STATIC_URL ='/static/'
 #        "/var/lib/openshift/54cbca4d4382ecb84e000042/app-root/runtime/repo/mysy/polls/static", 
 #    ]
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = ( os.path.join( 'static'), )
 
 #ADMIN_MEDIA_PREFIX = '/mysy/static/admin/'
 
