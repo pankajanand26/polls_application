@@ -67,6 +67,7 @@ MIDDLEWARE_CLASSES = (
 #    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.contrib.auth.context_processors.auth',
 )
 
 ROOT_URLCONF = 'mysy.urls'
@@ -130,7 +131,7 @@ STATIC_URL ='/static/'
 #        "/var/lib/openshift/54cbca4d4382ecb84e000042/app-root/runtime/repo/mysy/polls/static", 
 #    ]
 
-STATICFILES_DIRS = ( os.path.join( 'static'), )
+STATICFILES_DIRS = ( os.path.abspath(os.path.join(BASE_DIR, 'static')), )
 
 #ADMIN_MEDIA_PREFIX = '/mysy/static/admin/'
 
@@ -140,6 +141,10 @@ STATICFILES_FINDERS = (
  #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
  )
 
+#TEMPLATE_CONTEXT_PROCESSORS = ( 
+    # other context processors.... 
+#    'django.core.context_processors.static', 
+#)
 
 EMAIL_HOST      = 'smtp.gmail.com'
 EMAIL_HOST_PASSWORD = 'zsusozqvenhzwawe'
