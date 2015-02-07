@@ -119,7 +119,7 @@ USE_TZ = True
 
 #STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 
-STATIC_ROOT=''
+STATIC_ROOT=os.path.join(BASE_DIR,  'static'
 
 STATIC_URL ='/static/'
 
@@ -139,3 +139,5 @@ EMAIL_PORT      = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL  = 'admin@mysy.com'
 EMAIL_USE_TLS = True
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]

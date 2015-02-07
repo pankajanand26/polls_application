@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#ln -sf  "$OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/lib/python2.7/site-packages/Django-1.5-py2.7.egg/django/contrib/admin" "$OPENSHIFT_REPO_DIR"mysy/static/
+ln -sf  "$OPENSHIFT_HOMEDIR/$cartridge_type/virtenv/lib/python2.7/site-packages/Django-1.5-py2.7.egg/django/contrib/admin" "$OPENSHIFT_REPO_DIR"mysy/static/
 
-python "$OPENSHIFT_REPO_DIR"mysy/manage.py collectstatic --noinput
+#python "$OPENSHIFT_REPO_DIR"mysy/manage.py collectstatic --noinput
 
 echo "Executing 'python $OPENSHIFT_REPO_DIR/wsgi/openshift/manage.py syncdb --noinput'"
 python $OPENSHIFT_REPO_DIR/mysy/manage.py syncdb --noinput
