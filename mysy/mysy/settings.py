@@ -119,9 +119,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 
-STATIC_URL =BASE_DIR +'/mysy/static/'
+STATIC_URL ='/static/'
 
-ADMIN_MEDIA_PREFIX = '/mysy/static/admin/'
+#ADMIN_MEDIA_PREFIX = '/mysy/static/admin/'
 
 STATICFILES_FINDERS = (
      'django.contrib.staticfiles.finders.FileSystemFinder',
