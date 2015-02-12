@@ -1,7 +1,7 @@
 {% load staticfiles %}  
 
 <head> 
-  <title>Bootstrap Example</title> 
+  <title>Questions Details</title> 
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> 
@@ -9,6 +9,11 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 </head>
 
+<body>
+
+<div class="container"> 
+  <h1>My First Bootstrap Page</h1> 
+  <p>Most Popular questions:</p> 
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -18,3 +23,6 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+</div>
+</body>
+
