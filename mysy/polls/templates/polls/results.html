@@ -1,8 +1,22 @@
-<h1>{{ question.question_text }}</h1>
-<ul> 
-{% for choice in question.choice_set.all %} 
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ 
-choice.votes|pluralize }}</li> 
-{% endfor %} 
-</ul> 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+{% load staticfiles %}
+
+<head> 
+ <title>Questions Details</title> 
+ <meta charset="utf-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+</head> 
+
+<body>  
+<div class="container">  
+ <h1>{{ question.question_text }}</h1>
+ <ul> 
+ {% for choice in question.choice_set.all %} 
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li> 
+ {% endfor %} 
+ </ul> 
+ <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</div>
+</body>

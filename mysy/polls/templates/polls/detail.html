@@ -1,3 +1,16 @@
+{% load staticfiles %} 
+
+<head> 
+ <title>Questions Details</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head> 
+
+<body>
+<div class="container">
 <h1>{{ question.question_text }}</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <form action="{% url 'polls:vote' question.id %}" method="post"> 
@@ -8,3 +21,5 @@
 {% endfor %} 
 <input type="submit" value="Vote" /> 
 </form>
+</div>
+</body>
