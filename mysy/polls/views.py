@@ -70,11 +70,11 @@ def create_user(request):
     user_name=request.POST["username"]
     pass_word=request.POST["pass"]
     emailid=request.POST["email"]
-    user = authenticate(username=user_name, password=pass_word)
+    user = User.objects.filter(email=emailid).exists()
     if user is None:
         user = User.objects.create_user(user_name,emailid,pass_word)
         user.last_name = last_name
         user.first_name = first_name
         return HttpResponseRedirect(reverse('polls:created_user'))
     else:
-        return HttpResponseRedirect(reverse('polls:created_user'))
+        return HttpResponseRedirect(reverse('ulogin'))

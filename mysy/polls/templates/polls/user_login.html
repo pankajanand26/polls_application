@@ -9,22 +9,22 @@
  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head> 
 
-<body>
+<body background="http://www.davegranlund.com/cartoons/wp-content/uploads/Color-polling-polls.jpg">
 <div class="container">
 <h1>Sign In</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <form action="{% url 'polls:index' %}" method="post"> 
 {% csrf_token %}
 
-First name:<br> 
+Username:<br> 
 <input type="text" name="first_name" id='first_name'> 
 <br> 
-Last name:<br> 
-<input type="text" name="last_name" id='last_name'>
+Password:<br> 
+<input type="password" name="pass" id='pass'>
 
-<input type="submit" value="Vote" /> 
+<input type="submit" value="Submit" /> 
 </form>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h4>If you dont have and acoount then Register <a href="{% url 'polls:register' %}">HERE</a> </h4>
 </div>
 </body>
