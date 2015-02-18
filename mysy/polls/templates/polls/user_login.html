@@ -24,7 +24,8 @@ Password:<br>
 
 <input type="submit" value="Submit" /> 
 </form>
-<h4>If you dont have and acoount then Register <a href="{% url 'polls:register' %}">HERE</a> </h4>
-<img src="http://img.memerial.net/memerial.net/5697/polls-closed.jpg" alt="Mountain View" style="width:304px;height:304px"> 
+{{ login_info }}
+{% if not user or not user1 %}
+<h4>If you dont have and acoount then Register <a href="{% url 'polls:register' %}">HERE</a> </h4>{% endif %}
 </div>
 </body>
