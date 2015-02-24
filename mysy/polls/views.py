@@ -91,7 +91,7 @@ def ulogin(request):
         form=LoginForm()
         template = loader.get_template('polls/user_login.html') 
         context = RequestContext(request, {
-            'login_info': 'Please Authorize'+str(request.user),
+            'login_info': 'Please Authorize'+ " " +str(request.user),
             'form': form,
         }) 
         return HttpResponse(template.render(context))
