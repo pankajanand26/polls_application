@@ -18,19 +18,21 @@
 <div class="container">
 <h1>Sign In</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<form action="{% url 'polls:register' %}" method="post"> 
+<form action="{% url 'polls:create_user' %}" method="post"> 
 {% csrf_token %}
-<div class="form-group"> 
-<table>
-{% for field in form %} 
-        <div class="fieldWrapper"> 
-           <tr>
-            <td>{{ field.errors }} </td>
-            <td>{{ field.label_tag }}</td><td> {{ field }} </td></tr>
-        </div> 
-    {% endfor %} 
-<tr><td padding: 20px;>                                                                                                                                                                        <input type="submit" value="Submit" /> </td></tr>
-</table>
+<div class="form-group">  
+<table><tr><td>First name</td> 
+<td><input type="text" name="first_name" id='first_name'> </td></tr>
+<tr><td>Last name</td>
+<td><input type="text" name="last_name" id='last_name'></td></tr>
+<tr><td>Username</td>
+<td><input type="text" name="username" id='username'></td></tr>
+<tr><td>Password:</td>
+<td><input type="password" name="pass" id='pass'></td></tr>
+<tr><td>Email</td>
+<td><input type="text" name="email" id='email'></td></table>
+<tr><td padding: 20px;>
+<input type="submit" value="Submit" /> </td></tr>
 </form>
 
 </div><br>
