@@ -7,3 +7,7 @@ class UserRegForm(forms.Form):
     username = forms.CharField(required=True)
     password = forms.CharField(widget=forms.PasswordInput)
     password2 = forms.CharField(widget=forms.PasswordInput)
+
+class LoginForm(forms.Form):
+    username = forms.CharField(required=True)
+    password = forms.CharField(widget=forms.PasswordInput)

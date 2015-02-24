@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+{{ error  }}
 <div class="container"> 
   <h1>Most Popular questions:</h1> 
 
@@ -23,6 +23,6 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+<a href="{% url 'polls:ulogout' %}">logout</a></li>
 </div>
 </body>
-
