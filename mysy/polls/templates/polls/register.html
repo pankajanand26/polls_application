@@ -29,11 +29,13 @@
             <td>{{ field.label_tag }}</td><td> {{ field }} </td></tr>
         </div> 
     {% endfor %} 
-<tr><td padding: 20px;>                                                                                                                                                                        <input type="submit" value="Submit" /> </td></tr>
+<tr><td></td>
+    <td padding: 20px;> 
+    <input type="submit" value="Submit" /> </td></tr>
 </table>
 </form>
 
-</div><br>
-<h4>If you have an account then Login <a href="{% url 'ulogin' %}">HERE</a> </h4>
+</div>
+<h4>Already registered <a href="{% url 'ulogin' %}">Log in</a>. </h4>
 </div>
 </body>
