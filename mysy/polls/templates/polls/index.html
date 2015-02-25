@@ -4,25 +4,44 @@
   <title>Questions Details</title> 
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <style> body { 
+    background-image: url(""); 
+    background-repeat: repeat-y; }
+
+    .row {  
+       height: 100px;     background-color: green; } 
+    .container { 
+      margin-top: 50px;
+      box-shadow: 0 0 30px black;
+      padding:0 15px 0 15px; } 
+  </style>
   <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
 </head>
 
-<body>
+<body >
 {{ error  }}
 <div class="container"> 
-  <h1>Most Popular questions:</h1> 
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-danger">
+        <div class="panel-body">
+          <h1>Most Popular questions:</h1> 
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-<a href="{% url 'polls:ulogout' %}">logout</a></li>
+          {% if latest_question_list %}
+          <ul>
+            {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p>No polls are available.</p>
+          {% endif %}
+          <a href="{% url 'polls:ulogout' %}">logout</a></li></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
