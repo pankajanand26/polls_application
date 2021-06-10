@@ -6,5 +6,5 @@ setup(name='mysy',
       author='Your Name',
       author_email='example@example.com',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['Django==1.11.29'],
+      install_requires=['Django==2.2.24'],
      )
